@@ -35,7 +35,6 @@
 		0247E5192F55E98D00BD6C0B /* llex.c in Sources */ = {isa = PBXBuildFile; fileRef = 0247E4DA2F55E98D00BD6C0B /* llex.c */; };
 		0247E51A2F55E98D00BD6C0B /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 0247E4FD2F55E98D00BD6C0B /* lzio.c */; };
 		0247E51B2F55E98D00BD6C0B /* lopcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = 0247E4E32F55E98D00BD6C0B /* lopcodes.c */; };
-		0247E51C2F55E98D00BD6C0B /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 0247E4FE2F55E98D00BD6C0B /* Makefile */; };
 		0247E51D2F55E98D00BD6C0B /* lmathlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0247E4DC2F55E98D00BD6C0B /* lmathlib.c */; };
 		0247E51E2F55E98D00BD6C0B /* lundump.c in Sources */ = {isa = PBXBuildFile; fileRef = 0247E4F82F55E98D00BD6C0B /* lundump.c */; };
 		0247E51F2F55E98D00BD6C0B /* liolib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0247E4D72F55E98D00BD6C0B /* liolib.c */; };
@@ -256,7 +255,6 @@
 		0247E55B2F55EBE000BD6C0B /* lopcodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lopcodes.h; path = lua/lopcodes.h; sourceTree = "<group>"; };
 		0247E55C2F55EBE000BD6C0B /* lapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = lapi.h; path = lua/lapi.h; sourceTree = "<group>"; };
 		0247EF952F22D17000D2CB0B /* game_engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = game_engine; sourceTree = BUILT_PRODUCTS_DIR; };
-		0247EF962F26FF1100D2CB0B /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		025F3D492F355B2D00798904 /* ImageDB.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageDB.hpp; sourceTree = "<group>"; };
 		025F3D4A2F355B4E00798904 /* Render.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Render.hpp; sourceTree = "<group>"; };
 		0275AAAA2F3674A800506165 /* AudioHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioHelper.h; sourceTree = "<group>"; };
@@ -502,7 +500,6 @@
 				02BCF2242F5CCDB200CE38F9 /* luabridge */,
 				0247E7E62F22BCD700D2CB0B /* glm */,
 				0247EF952F22D17000D2CB0B /* game_engine */,
-				0247EF962F26FF1100D2CB0B /* Makefile */,
 				0247E4FF2F55E98D00BD6C0B /* lua */,
 				0281DA8E2F34FFB50080D5E7 /* src */,
 				0281DA902F3514970080D5E7 /* Frameworks */,
@@ -646,7 +643,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					024595A02F208F3E0001F583 = {
 						CreatedOnToolsVersion = 26.2;
@@ -760,7 +757,6 @@
 				02BF3E4F2F67470400642B30 /* Actor.cpp in Sources */,
 				0247E51A2F55E98D00BD6C0B /* lzio.c in Sources */,
 				0247E51B2F55E98D00BD6C0B /* lopcodes.c in Sources */,
-				0247E51C2F55E98D00BD6C0B /* Makefile in Sources */,
 				0247E51D2F55E98D00BD6C0B /* lmathlib.c in Sources */,
 				0247E51E2F55E98D00BD6C0B /* lundump.c in Sources */,
 				0247E51F2F55E98D00BD6C0B /* liolib.c in Sources */,
@@ -806,6 +802,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7D6W2V9L5P;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -831,6 +828,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Debug;
 		};
@@ -868,6 +866,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7D6W2V9L5P;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -886,6 +885,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Release;
 		};
@@ -894,7 +894,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7D6W2V9L5P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -939,7 +941,9 @@
 					"-F$(PROJECT_DIR)/SDL2_mixer/lib",
 					"-F$(PROJECT_DIR)/SDL2_image/lib",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NickStenman.game-engine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -948,7 +952,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7D6W2V9L5P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -988,7 +994,9 @@
 					"-F$(PROJECT_DIR)/SDL2_ttf/lib",
 					"-F$(PROJECT_DIR)/SDL2/lib",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NickStenman.game-engine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

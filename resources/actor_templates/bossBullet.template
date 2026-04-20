@@ -1,0 +1,20 @@
+{
+    "name": "bossBullet",
+    "components": {
+        "1": {
+            "type": "ProjectileB"
+        },
+        "2": {
+            "type": "Transform",
+            "scale_x": 3,
+            "scale_y": 3
+        },
+        "3": {
+            "type": "PlayerRenderer",
+            "image": "bossBullet"
+        },
+        "4": {
+            "type": "DirectionalVelocity"
+        }
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "actors": [
+        {
+			"name": "GameManager",
+			"components": {
+				"1": {
+					"type": "GameManager"
+				}
+			}
+		},
+        {
+            "name": "background1",
+            "components": {
+                "1": {
+                    "type": "Transform",
+                    "x" : 0,
+                    "y" : 0
+                },
+                "2" : {
+                    "type": "SpriteRenderer",
+                    "image": "background"
+                }
+            }
+        },
+        {
+			"name": "IntroManager",
+			"components": {
+				"1": {
+					"type": "IntroManager"
+				}
+			}
+		},
+        {
+            "name": "boss",
+            "components": {
+            "1": {
+                "type": "Boss"
+            },
+            "2": {
+                "type" : "EnemyCollide"
+            },
+            "3": {
+                "type": "Transform",
+                "y" : -7,
+                "x": 0,
+                "scale_x": 0.4,
+                "scale_y": 0.4
+            },
+            "4" : {
+                "type" : "PlayerRenderer",
+                    "image": "REDBOSS"
+            }
+            }
+        },
+        {
+            "name": "hand1",
+            "components": {
+            "1": {
+                "type": "Hand1"
+            },
+            "2": {
+                "type" : "EnemyCollide"
+            },
+            "3": {
+                "type": "Transform",
+                "y" : 0,
+                "x": 9,
+                "scale_x": 0.20,
+                "scale_y": 0.20,
+                "rotation_degrees": 90
+            },
+            "4" : {
+                "type" : "PlayerRenderer",
+                    "image": "hand"
+            }
+            }
+        },
+        {
+            "name": "hand2",
+            "components": {
+            "1": {
+                "type": "Hand2"
+            },
+            "2": {
+                "type" : "EnemyCollide"
+            },
+            "3": {
+                "type": "Transform",
+                "y" : 0,
+                "x": -9,
+                "scale_x": 0.20,
+                "scale_y": 0.20,
+                "rotation_degrees": 270
+
+            },
+            "4" : {
+                "type" : "PlayerRenderer",
+                    "image": "hand"
+            }
+            }
+        },
+        {
+            "name": "player",
+            "components": {
+                "1": {
+                    "type": "Player"
+                },
+                "2":{
+                    "type": "ArrowKeyControl"
+                },
+                "3" : {
+                    "type": "Transform",
+                    "y" : 5,
+                    "x" : 0
+                },
+                "4": {
+                    "type" : "PlayerRenderer",
+                    "image": "Ship_3"
+                },
+                "5": {
+                    "type": "ShootingControls"
+                },
+                "6": {
+                    "type": "PlayerCollide"
+                },
+                "7": {
+                    "type": "Dash"
+                }
+            }
+        },
+        {
+            "name": "hud",
+            "components": {
+                "1":{
+                    "type": "Hud"
+                }
+            }
+        },
+        {
+            "name": "CameraManager",
+            "components": {
+                "1": {
+                    "type": "CameraManager"
+                }
+            }
+        }
+    ]
+}

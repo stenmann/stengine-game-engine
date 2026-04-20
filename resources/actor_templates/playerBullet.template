@@ -1,0 +1,20 @@
+{
+    "name": "playerBullet",
+    "components": {
+        "1": {
+            "type": "ProjectileP"
+        },
+        "2": {
+            "type": "Transform",
+            "scale_x": 0.05,
+            "scale_y": 0.05
+        },
+        "3": {
+            "type": "PlayerRenderer",
+            "image": "playerBullet"
+        },
+        "4": {
+            "type": "DirectionalVelocity"
+        }
+    }
+}
